@@ -32,7 +32,8 @@ public class Task2 {
 	}else {
 		System.out.println("Sorry, this is not right url");
 	}
-		
+	
+	driver.close();	
 
 //	String title=driver.getTitle();
 //	System.out.println(title);
@@ -42,7 +43,7 @@ public class Task2 {
 //		System.out.println("Sorry, not right url");
 //	}
 	
-	driver.close();	
+	
 	
 	
 	

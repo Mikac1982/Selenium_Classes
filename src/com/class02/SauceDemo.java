@@ -20,7 +20,7 @@ public class SauceDemo {
 		Thread.sleep(2000);
 		driver.findElement(By.className("login_logo")).click();;
 		
-		driver.close();
+	//	driver.close();
 		
 		
 		

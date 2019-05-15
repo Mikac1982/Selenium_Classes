@@ -17,7 +17,7 @@ public class Task1 {
 	WebDriver driver=new ChromeDriver();	
 		
 	driver.get("https://www.amazon.com");
-	System.out.println(driver.getTitle());
+	System.out.println(driver.getTitle()); //Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more
 	String title=driver.getTitle();
 	
 	if (title.equalsIgnoreCase("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more")) {

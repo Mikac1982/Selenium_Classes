@@ -33,7 +33,7 @@ public class ParaBank2 {
         driver.findElement(By.name("password")).sendKeys("1903");
         driver.findElement(By.xpath("//input[@value='Log In' and @type='submit']")).click();
 		
-		
+		driver.close();
 		
 		
 	}
