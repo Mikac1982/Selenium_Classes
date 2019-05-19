@@ -9,6 +9,7 @@ public class HelloWorld {
 		
 	//passing key -> webdriver.chrome.driver, and value-path location where we store location
 	//key value will be different depending on web driver
+		
 //	System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver"); 
 //	WebDriver driver= new ChromeDriver();	
 //	driver.get("http:google.com");	//heading to google, passing string parameters //to pass URL 
