@@ -21,7 +21,7 @@ public class WebElementCommands {
 
 		Thread.sleep(2000);
 	
-		//find returns i element we store it inside variable->this variable holds entire box
+		//find returns 1 element, we store it inside variable->this variable holds entire box
 		//
 		WebElement userNameTxt=driver.findElement(By.cssSelector("input[id*='username']"));
 		Thread.sleep(2000);
@@ -60,7 +60,7 @@ public class WebElementCommands {
 		if (value.contains(userName)) {
 			 System.out.println(userName+" is logged in. Test case is PASS ");
 		}else {
-			 System.out.println(userName+" is logged in. Test case is not PASS ");
+			 System.out.println(userName+" is not logged in. Test case is not PASS ");
 		 }
 		
 		Thread.sleep(2000);

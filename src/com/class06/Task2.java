@@ -17,16 +17,20 @@ public class Task2 {
 			WebDriver driver=new ChromeDriver();
 			
 	        driver.manage().window().fullscreen();
+	       
 	        driver.get("http://uitestpractice.com/");	
 	        driver.findElement(By.linkText("Select")).click();
 	        //working with Single DD
 	        WebElement countriesDD=driver.findElement(By.id("countriesSingle"));
 	    
+	        
+	       
 	        CommonMethods.selectValueFromDD(countriesDD,"United states of America");
 	        
 	        //working with muplitple DD
 	        WebElement multDD=driver.findElement(By.cssSelector("select#countriesMultiple"));
 	        Select select=new Select(multDD);
+	      
 	        List<WebElement> optionList=select.getOptions();
 	        int ddSize=optionList.size();
 	        System.out.println("# of options in multiple countries dd="+ddSize);

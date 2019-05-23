@@ -1,5 +1,6 @@
 package com.class06;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,11 +22,50 @@ public class JSAlertTask {
 		driver.manage().window().fullscreen();
 		driver.get("https://www.seleniumeasy.com/test/javascript-alert-box-demo.html");
 		
-		driver.findElement(By.xpath("//button[@class='btn btn-default']")).click();
-		
-		
+		//alert box
+		driver.findElement(By.cssSelector("button[onclick*='Alert']")).click();
 		Thread.sleep(2000);
-	//	driver.quit();
+		
+		Alert alert=driver.switchTo().alert();
+		String alertTxt=alert.getText();
+		String expected1="I am an alert box!";
+		if (alertTxt.equals(expected1)) {
+		    System.out.println(alertTxt+" text is present");
+		}else {
+			System.out.println(alertTxt+" text is NOT present. ");
+		}
+		alert.accept();
+		
+		//confirm box
+		driver.findElement(By.cssSelector("button[onclick*='Confirm']")).click();
+		Thread.sleep(2000);
+		
+		Alert confirmAlert=driver.switchTo().alert();
+		String confirmTxt=confirmAlert.getText();
+		String expected2="Press a button!";
+		if (confirmTxt.equals(expected2)) {
+			System.out.println(confirmTxt+" text is present");
+		}else {
+			System.out.println(confirmTxt+" text is NOT present");
+		}
+		confirmAlert.dismiss();
+		
+		//prompt box
+		driver.findElement(By.cssSelector("button[onclick*='Prompt']")).click();
+		Thread.sleep(2000);
+		
+		Alert promptAlert=driver.switchTo().alert();
+		String promptTxt=promptAlert.getText();
+		String expected3="Please enter your name";
+		if (promptTxt.equals(expected3)) {
+			System.out.println(promptTxt+" text is present");
+		}else {
+			System.out.println(promptTxt+" text is NOT present");
+		}
+		promptAlert.accept();
+		
+		Thread.sleep(5000);
+		driver.quit();
 		
 	}
 }

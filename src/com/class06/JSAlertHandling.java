@@ -23,6 +23,7 @@ public class JSAlertHandling {
 		//--> unexpected alert open
 		//driver.findElement(By.id("confirm")).click(); 
 		
+		
 		//switch focus to the alert window
 		Alert alert=driver.switchTo().alert();
 		alert.accept();

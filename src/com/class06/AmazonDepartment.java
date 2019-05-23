@@ -27,7 +27,6 @@ public class AmazonDepartment {
 		
 		WebElement depart=driver.findElement(By.xpath("//select[@name='url']"));
 		Thread.sleep(2000);
-		
 		Select select=new Select(depart);
 		List<WebElement> allOpt=select.getOptions();
 		System.out.println("Toatal number of departmens available: "+allOpt.size());
@@ -40,7 +39,7 @@ public class AmazonDepartment {
 			Thread.sleep(2000);
 		}
 		
-		select.deselectByVisibleText(expected);
+		select.selectByVisibleText(expected);
 		Thread.sleep(2000);
 		driver.quit();		
 		

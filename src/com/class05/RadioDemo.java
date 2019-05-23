@@ -38,6 +38,7 @@ public class RadioDemo {
 		
 		for (WebElement profession :professionList) {
 			Thread.sleep(2000);
+			
 			if (profession.isEnabled()) { //only if it's enabled we go inside
 				
 			String value=profession.getAttribute("value"); //we are looking for attribute ->value
@@ -53,6 +54,6 @@ public class RadioDemo {
 		
 		
 		Thread.sleep(2000);
-		driver.quit();
+	//	driver.quit();
 	}
 }
