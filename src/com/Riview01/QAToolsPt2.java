@@ -26,15 +26,19 @@ public class QAToolsPt2 extends CommonMethods{
 		
 		driver.findElement(By.name("firstname")).sendKeys("FirstName");
 		
-		//to get all the links
+		//to get all the links, give us List of Web elements-list of links
 	    List<WebElement> links=driver.findElements(By.tagName("a"));
 	    System.out.println("Total number of links: "+links.size());
 	    
+	    int count=0;
 	    for(WebElement link:links) {
-	    	 
-	    	System.out.println(link.getText());
+	    	String linkText=link.getText();
+	    	if (!linkText.isEmpty()) {
+	    	System.out.println(linkText);
+	    	count++;
 	    }
-	    
+	    }
+	    System.out.println("Total number of links with text: "+count);
 		Thread.sleep(1000);
 		
 		

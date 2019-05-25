@@ -28,11 +28,13 @@ public class WindowsHandle extends CommonMethods{
 		//click on the link to open new tab
 		driver.findElement(By.xpath("//a[text()='Opens in a new window']")).click();
 		
+	
 		Set<String> allWindows=driver.getWindowHandles();
+		//iterate through each unique id
 		Iterator<String> it=allWindows.iterator();
-		
-		parent=it.next();
-		String child=it.next();
+		parent=it.next();  //goes to first id
+		String child=it.next();  //goes to child id
+		//in order for us to use secondId we have to switch to child window
 		driver.switchTo().window(child);
 		child=driver.getTitle();
 		String childId=driver.getWindowHandle();

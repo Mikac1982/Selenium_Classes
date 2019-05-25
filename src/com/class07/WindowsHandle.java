@@ -24,7 +24,7 @@ public class WindowsHandle extends CommonMethods{
 		
 		//get the title of the parent
 		String parent=driver.getTitle();
-		//returns ID number of parent window
+		//.getWindowHandle()--> returns ID number of parent window
 		String parentId=driver.getWindowHandle();
 		System.out.println("Parent title: "+parent);
 		System.out.println("Parent ID: "+parentId);
@@ -32,16 +32,16 @@ public class WindowsHandle extends CommonMethods{
 		//click on the link to open new window
 		driver.findElement(By.xpath("//a[text()='Opens in a new window']")).click();
 		
-		//to get ALL ID numbers of all windows
-		//returns us Set of String
+		//to get ALL ID numbers of each window tab
+		//driver.getWindowHandles()--> returns us Set of String
 		Set<String> allWindows=driver.getWindowHandles();
-		//iterating through Set of windows
+		//iterating through Set of IDs
 		Iterator<String> it=allWindows.iterator();
-		parent=it.next();
+		parent=it.next(); //to get first/parent id
 		
 		//iterate through second id
 		String child=it.next();
-		//switch to child window
+		//switching to child window (after that we can get child title)
 		driver.switchTo().window(child);
 		
 		//getting title of the child window -validating 

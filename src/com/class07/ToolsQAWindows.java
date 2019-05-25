@@ -42,11 +42,12 @@ public class ToolsQAWindows extends CommonMethods{
 			System.out.println("Second title is wrong");
 		}
 		driver.close();
-		
+		//going back to parent window
 		driver.switchTo().window(parentId);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[text()='Click Here']")).click();
 		Thread.sleep(1000);
+		//getting all unique IDs 
 		Set<String> allWind2=driver.getWindowHandles();
 		Iterator<String> it2=allWind2.iterator();
 		parentId=it2.next();

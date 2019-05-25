@@ -22,8 +22,7 @@ public class Task2 {
 	        driver.findElement(By.linkText("Select")).click();
 	        //working with Single DD
 	        WebElement countriesDD=driver.findElement(By.id("countriesSingle"));
-	    
-	        
+	   
 	       
 	        CommonMethods.selectValueFromDD(countriesDD,"United states of America");
 	        

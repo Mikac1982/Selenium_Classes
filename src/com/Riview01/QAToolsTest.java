@@ -22,8 +22,8 @@ public class QAToolsTest extends CommonMethods{
 			i++;
 			if(ele.isEnabled()) {
 				ele.click();
-				Thread.sleep(2000);
-				if(i==4) {
+				Thread.sleep(1000);
+				if(i==4) {  //at 4th element we stop clicking
 					break;
 				}
 			}
