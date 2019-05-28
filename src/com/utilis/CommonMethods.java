@@ -18,7 +18,10 @@ public class CommonMethods {
 	public static void setUpDriver(String browser, String url) {
 		
 		if (browser.equalsIgnoreCase("chrome")) {
+		    //for MAC
 		    System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver");	
+		    //for WINDOWS
+		 // System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");	
 		    driver=new ChromeDriver();
 		}else if (browser.equalsIgnoreCase("firefox")) {
 		    System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver");
@@ -33,7 +36,8 @@ public class CommonMethods {
 		driver.get(url);
 	}
 /**
- * 	@author Syntax This method will select a specified value from a drop down
+ * @author Syntax 
+ * This method will select a specified value from a drop down by visible text
  * @parameter Select element, String text
  */
 	public static void selectValueFromDD(WebElement element, String text) {
@@ -74,7 +78,7 @@ public class CommonMethods {
 		
 	}
 	
-	public static void sentText(WebElement element, String value) {
+	public static void sendText(WebElement element, String value) {
 		element.clear();
 		element.sendKeys(value);
 	}
@@ -120,7 +124,8 @@ public class CommonMethods {
 	}
 	/**
 	 * Method that will switch control to the specify frame
-	 * @paramater frame id or frame name
+	 * @throws NoSuchFrameException if frame is not present
+	 * @param frame id or frame name
 	 */	
 	public static void switchToFrame(String idOrName) {
 		try {
@@ -131,9 +136,9 @@ public class CommonMethods {
 	}
 	/**
 	 * Method that will switch control to the specify frame
-	 * @paramater frame element
+	 * @param frame element
 	 */	
-	public static void switchToFrame(WebElement element) { //method overloding
+	public static void switchToFrame(WebElement element) { //method overloading
 		try {
 		    driver.switchTo().frame(element);
 		}catch(NoSuchFrameException e) {
@@ -142,9 +147,9 @@ public class CommonMethods {
 	}
 	/**
 	 * Method that will switch control to the specify frame
-	 * @paramater frame index
+	 * @param frame index
 	 */
-	public static void switchToFrame(int index) { //method overloding
+	public static void switchToFrame(int index) { //method overloading
 		try {
 		    driver.switchTo().frame(index);
 		}catch(NoSuchFrameException e) {

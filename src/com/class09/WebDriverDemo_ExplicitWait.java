@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.utilis.CommonMethods;
 
-public class WebDriverDemo extends CommonMethods{
+public class WebDriverDemo_ExplicitWait extends CommonMethods{
 
 	public static void main(String[] args) {
 		

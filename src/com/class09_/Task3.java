@@ -2,7 +2,6 @@ package com.class09_;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,32 +15,46 @@ public class Task3 extends CommonMethods{
 	//Enter "Hello" and verify text is entered successfully 
 	//Close the browser
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 	setUpDriver("chrome", "https://the-internet.herokuapp.com/");	
-		
-	driver.findElement(By.linkText("Dynamic Controls")).click();	
-	driver.findElement(By.xpath("//button[text()='Enable']")).click();	
 	
-	WebDriverWait wait=new WebDriverWait(driver, 20);
-	WebElement disable=driver.findElement(By.xpath("//button[text()='Disable']"));
-	wait.until(ExpectedConditions.visibilityOf(disable));
+	String text="Dynamic Controls";
+	driver.findElement(By.linkText(text)).click();	
 	
-	Actions action=new Actions(driver);
-	WebElement box=driver.findElement(By.cssSelector("input[type='text']"));
-	action.moveToElement(box).click().sendKeys("Hello").build().perform();
+	String buttonXpath="//button[text()='Enable']";
+	driver.findElement(By.xpath(buttonXpath)).click();	
 	
-	disable.click();
-	WebElement text=driver.findElement(By.id("message"));
-	wait.until(ExpectedConditions.visibilityOf(text));
+	     //1. way: passing locator directly into ExpectedConditions
+	WebDriverWait wait=new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='text']")));
+//	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Disable']")));
 	
-	if (text.isDisplayed()) {
-		String message=text.getText();
-		System.out.println("Text is entered succsesfully");
+	String textToEnter="Hello";
+	driver.findElement(By.xpath("//input[@type='text']")).sendKeys(textToEnter);
+	
+	String returnedText=driver.findElement(By.xpath("//input[@type='text']")).getAttribute("value");
+	if (returnedText.equals(textToEnter)) {
+		System.out.println("Text "+returnedText+" is entered");
 	}else {
-		System.out.println("Text is NOT entered succsesfully");
+		System.out.println("Text is not entered");
 	}
 	
+	     //2. way: identify element and then pass it to the ExpectedConditions
+//	WebElement element=driver.findElement(By.xpath("//input[@type='text']"));
 	
+//	WebDriverWait wait=new WebDriverWait(driver,30);
+//	wait.until(ExpectedConditions.elementToBeClickable(element));
+	
+//	String textToEnter="Hello";
+//	element.sendKeys(textToEnter);
+	
+	//verifying text is entered successfully
+//	String value=element.getAttribute("value");
+//	System.out.println(value);  //Hello
+	
+	
+	Thread.sleep(2000);
+	driver.quit();
 	}
 }
