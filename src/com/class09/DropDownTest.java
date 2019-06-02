@@ -15,7 +15,7 @@ public class DropDownTest extends CommonMethods{
 		WebElement contriesDD = driver.findElement(By.cssSelector("select#continents"));
 		
 		//method from common methods class
-		selectValueFromDD(contriesDD, "Australia");
+		selectValueDropDown(contriesDD, "Australia");
 		
 		Thread.sleep(6000);
 		driver.quit();

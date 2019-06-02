@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Task3 {
+import com.utilis.CommonMethods;
+
+public class Task3 extends CommonMethods{
    /* Check if all Years of Experience radio buttons are clickable
 	* -----------------------------------------------
 	* Check if all Automation Tools checkboxes are clickable
@@ -15,12 +17,13 @@ public class Task3 {
 	*/
 	
 	public static void main(String[] args) throws InterruptedException {
+	
+		setUpDriver("chrome","https://www.toolsqa.com/automation-practice-form/");
+	//	System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver");	
+	//	WebDriver driver=new ChromeDriver();
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver");	
-		WebDriver driver=new ChromeDriver();
-		
-		driver.manage().window().fullscreen();
-		driver.get("https://www.toolsqa.com/automation-practice-form/");
+	//	driver.manage().window().fullscreen();
+	//	driver.get("https://www.toolsqa.com/automation-practice-form/");
 		
 		List<WebElement> yearsOfEx=driver.findElements(By.name("exp"));
 		System.out.println(yearsOfEx.size());

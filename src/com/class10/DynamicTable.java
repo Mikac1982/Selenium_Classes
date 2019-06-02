@@ -19,8 +19,8 @@ public class DynamicTable extends CommonMethods{
 	driver.findElement(By.cssSelector("input[value='Login")).click();
 	
 	//get number of rows and columns
-	List<WebElement> rows=driver.findElements(By.xpath("//table[contains(@id,'orderGrid')]/tbody/tr"));
-	List<WebElement> cols=driver.findElements(By.xpath("rowTest"));
+	List<WebElement> rows=driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
+	List<WebElement> cols=driver.findElements(By.xpath("//table[contains(@id,'orderGrid')]/tbody/tr[1]/th"));
 	
 	//click on check box next to Susan McLaren
 	String expectedValue="Canada";

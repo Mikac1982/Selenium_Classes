@@ -60,13 +60,28 @@ public class CommonMethods_ {
 		element.sendKeys(value);
 	}
 	
+	//LOLA:
+	public static void click(WebElement element) {			
+		element.click();
+			
+		}
+	
+	public static void chooseDateFromCalendar(List<WebElement> list, String expectedValue) {
+		
+		List<WebElement> rows=(List<WebElement>) list;
+		
+		for (WebElement row:rows) {
+			String rowText=row.getText();
+			if(rowText.contains(expectedValue)) {
+				row.click();
+				
+			}
+		}
 	
 	
 	
 	
 	
 	
-	
-	
-	
+	}
 }

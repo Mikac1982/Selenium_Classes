@@ -24,7 +24,7 @@ public class Task2 {
 	        WebElement countriesDD=driver.findElement(By.id("countriesSingle"));
 	   
 	       
-	        CommonMethods.selectValueFromDD(countriesDD,"United states of America");
+	        CommonMethods.selectValueDropDown(countriesDD,"United states of America");
 	        
 	        //working with muplitple DD
 	        WebElement multDD=driver.findElement(By.cssSelector("select#countriesMultiple"));

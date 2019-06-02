@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import com.utilis.CommonMethods;
 
 public class CalendarDemo extends CommonMethods{
@@ -19,31 +18,24 @@ public class CalendarDemo extends CommonMethods{
 	//	driver.switchTo().frame(frame);
 		switchToFrame(frame);
 		
-		//1. we have to click on element that opens calendar (click to see calendar view)
+		//1. we have to click on element that opens calendar (click to bring calendar view)
 		driver.findElement(By.id("datepicker")).click();
 		
 		//2. get all cells -->/td of the table using findElements()
 		List<WebElement> cells=driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']/tbody/tr/td"));
 		
-		//3.get text of each cell/td
+		//3. get text of each cell/td
 		String expectedDate="30";
 		
 		for (WebElement cell:cells) {
 			String cellText=cell.getText();
+		//4. checking specific date
 			if(cellText.equals(expectedDate)){
+		//5. if data is matching, click on it (and break the loop)
 				cell.click();
-				
+			  //break;
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		Thread.sleep(3000);
 		driver.quit();

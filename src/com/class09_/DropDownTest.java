@@ -14,7 +14,7 @@ public class DropDownTest extends CommonMethods{
 		setUpDriver("chrome", url);
 		WebElement contriesDD=driver.findElement(By.cssSelector("select#continents"));
 		
-		selectValueFromDD(contriesDD, "Australia");
+		selectValueDropDown(contriesDD, "Australia");
 		
 		
 		Thread.sleep(3000);
