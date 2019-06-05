@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4437" started-at="2019-06-04T23:36:47Z" finished-at="2019-06-04T23:36:51Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4437" started-at="2019-06-04T23:36:47Z" finished-at="2019-06-04T23:36:51Z">
+      <class name="com.class12_.Task1">
+        <test-method status="PASS" signature="readFile()[pri:1, instance:com.class12_.Task1@4cc0edeb]" name="readFile" duration-ms="4188" started-at="2019-06-04T23:36:47Z" finished-at="2019-06-04T23:36:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readFile -->
+        <test-method status="PASS" signature="loginValidation()[pri:2, instance:com.class12_.Task1@4cc0edeb]" name="loginValidation" duration-ms="209" started-at="2019-06-04T23:36:51Z" finished-at="2019-06-04T23:36:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginValidation -->
+      </class> <!-- com.class12_.Task1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

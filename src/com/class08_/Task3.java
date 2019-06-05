@@ -30,7 +30,7 @@ public class Task3 extends CommonMethods{
 		
 		//this way works as well
 		action.clickAndHold(one).clickAndHold(two).clickAndHold(three).clickAndHold(four).build().perform();
-		
+	
 		Thread.sleep(2000);
 		
 		driver.quit();

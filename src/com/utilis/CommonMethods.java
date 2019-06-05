@@ -213,6 +213,24 @@ public static WebDriver driver;
 			}
 		}
 	}
+   public static void selectRadioBtn(List<WebElement> list, String expectedValue) {
+       boolean isSelected=false;
+       for (WebElement button : list) {
+           String buttonText = button.getText();
+
+           if (button.isDisplayed() && button.isEnabled() && buttonText.equals(expectedValue)) {
+               button.click();
+               System.out.println(expectedValue + " is selected");
+               isSelected=true;
+               break;
+           }
+
+       }
+       if (!isSelected) {
+           System.out.println("Expected value " + expectedValue + " is NOT selected");
+
+       }
+   }
 /**
  * This method will select specific check box
  * @param list of check boxes, String value
