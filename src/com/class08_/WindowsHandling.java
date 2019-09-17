@@ -95,7 +95,7 @@ public class WindowsHandling extends CommonMethods{
 	  Thread.sleep(2000);
 	  driver.quit();
 	  
-	  
+	 
 		
 	}
 }

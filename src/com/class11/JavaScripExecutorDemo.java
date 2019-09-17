@@ -41,7 +41,7 @@ public class JavaScripExecutorDemo extends CommonMethods{
 			String expected="QTP";
 			if (cbox.getAttribute("value").equals(expected)) {
 				if(!cbox.isSelected()) {
-					cbox.click();
+	//				cbox.click();
 					break;
 				}else {
 					System.out.println("Check box is selected by default");
@@ -57,6 +57,7 @@ public class JavaScripExecutorDemo extends CommonMethods{
 	js.executeScript("arguments[0].click();", el);
 	
 
+	
 	Thread.sleep(7000);
 	driver.quit();
 	}

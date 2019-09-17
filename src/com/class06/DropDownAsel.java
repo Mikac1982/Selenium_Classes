@@ -20,10 +20,12 @@ public class DropDownAsel {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().fullscreen();
 		driver.get("https://www.toolsqa.com/automation-practice-form/");
+		
 		// if we pass wrong element type to the Select class
 		// we will get UnexpectedTagNameException
 //		WebElement button=driver.findElement(By.cssSelector("button#submit"));
 //		Select select=new Select(button);
+		
 		// identify DD with <select>
 		WebElement contriesDD = driver.findElement(By.cssSelector("select#continents"));
 		// Pass to the Select class constructor

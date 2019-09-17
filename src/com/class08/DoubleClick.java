@@ -12,6 +12,7 @@ public class DoubleClick extends CommonMethods{
 		setUpDriver("chrome", "https://www.saucedemo.com");	
 		
 		driver.findElement(By.cssSelector("input#user-name")).sendKeys("double");
+		
 		Actions actions=new Actions(driver);
 		actions.doubleClick(driver.findElement(By.cssSelector("input#user-name"))).perform();
 		Thread.sleep(2000);

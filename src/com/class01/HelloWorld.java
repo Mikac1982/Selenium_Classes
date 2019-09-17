@@ -7,7 +7,7 @@ public class HelloWorld {
 
 	public static void main(String[] args) {
 		
-	//passing key -> webdriver.chrome.driver, and value-path location where we store location
+	//passing key -> webdriver.chrome.driver, and value-path location where we store chrome driver
 	//key value will be different depending on web driver
 		
 //	System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver"); 
@@ -21,5 +21,6 @@ public class HelloWorld {
 	WebDriver driver=new FirefoxDriver();
 	driver.get("http://adidas.com");
 	
+	driver.close();
 	}
 }

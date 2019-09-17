@@ -29,12 +29,14 @@ public static WebDriver driver;
 		
 		if (browser.equalsIgnoreCase("chrome")) {
 		        //for MAC
-		    System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver");	
+			System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver");
+	//	    System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver");	
 		        //for WINDOWS
 		  //System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");	
 		    driver=new ChromeDriver();
 		}else if (browser.equalsIgnoreCase("firefox")) {
-		    System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver");
+		    System.setProperty("webdriver.gecko.driver", "/Users/milenasibalic/Selenium/geckodriver");
+		 //   System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver");
 		    driver=new FirefoxDriver();
 		}
 		else {
@@ -364,4 +366,46 @@ public static WebDriver driver;
 	   js.executeScript("arguments[0].click();", element);
    }
    
+	
+   public static void chooseDateFromCalendar(List<WebElement> list, String expectedValue) {
+		
+		List<WebElement> rows=(List<WebElement>) list;
+		
+		for (WebElement row:rows) {
+			String rowText=row.getText();
+			if(rowText.contains(expectedValue)) {
+				row.click();
+				
+			}
+		}
+
+	}
+	
+  public static void selectRadioButton(WebElement element, String wantedValue) {
+		
+		List<WebElement> allRadios=element.findElements(By.cssSelector("input"));
+		for (WebElement radio:allRadios) {
+			
+			if(radio.isEnabled()) {
+				String value=radio.getText();
+				
+				if(value.equals(wantedValue)) {
+					radio.click();
+				}
+			}
+		}
+	}
+
+  public static void selectChechBox(WebElement element, String valueToSelect) {
+	
+	  List<WebElement> allOptions=element.findElements(By.tagName("input"));
+	  for(WebElement option:allOptions) {
+		  
+		  if(valueToSelect.equals(option.getText())) {
+			  option.click();
+		//	  break;
+		  }
+	  } 
+ }
+
 }

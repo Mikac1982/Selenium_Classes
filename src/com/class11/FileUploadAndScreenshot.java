@@ -19,7 +19,7 @@ public class FileUploadAndScreenshot extends CommonMethods{
 		
 	driver.findElement(By.linkText("File Upload")).click();	
 	
-	String filePath="/Users/milenasibalic/Desktop/helloOne.txt";
+	String filePath="/Users/milenasibalic/Desktop/cars.jpg";
 	driver.findElement(By.id("file-upload")).sendKeys(filePath);		
 	driver.findElement(By.id("file-submit")).click();
 	
@@ -34,9 +34,11 @@ public class FileUploadAndScreenshot extends CommonMethods{
 	//STEPS TO TAKE SCREENSHOT
 	//1. downcast webdriver object 
 	TakesScreenshot ts=(TakesScreenshot)driver;
+	
 	//2. use getScreenshotAs method
 	//this line will create new file; save it as a file
 	File pic=ts.getScreenshotAs(OutputType.FILE);
+	
 	//3. copy file-> we can bring that picture where ever we want and past it(provide location)
 	try {
 		FileUtils.copyFile(pic, new File("screenshots/TheInternet/FileUpload.png"));
@@ -44,10 +46,9 @@ public class FileUploadAndScreenshot extends CommonMethods{
 		e.printStackTrace();
 		System.out.println("Screenshot was not taken");
 	}
-	
-	
+
 	Thread.sleep(2000);	
-//	driver.quit();	
+	driver.quit();	
 		
 	}
 }

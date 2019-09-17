@@ -1,4 +1,4 @@
-package com.class01;
+ package com.class01;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +12,7 @@ public class test {
 //	WebDriver driver=new ChromeDriver();
 //	driver.get("http:google.com");
 	//opening chrome driver
-	System.setProperty("webdriver.gecko.driver", "/Users/milenasibalic/Selenium/chromedriver");
+	System.setProperty("webdriver.gecko.driver", "/Users/milenasibalic/Selenium/geckodriver");
 	
 	WebDriver driver=new FirefoxDriver();
 	driver.get("http:google.com");

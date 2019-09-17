@@ -11,7 +11,7 @@ public class CellByCell extends CommonMethods{
 
 	public static void main(String[] args) {
 		
-	    setUpDriver("chrome", "https://the-internet.herokuapp.com/");
+	    setUpDriver("gecko", "https://the-internet.herokuapp.com/");
 	    driver.findElement(By.linkText("Sortable Data Tables")).click();
 		
 	    //number of rows -->inside body

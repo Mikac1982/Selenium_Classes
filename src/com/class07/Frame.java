@@ -20,7 +20,9 @@ public class Frame extends CommonMethods{
 		//Way 3 //index
 		driver.switchTo().frame(0);
 		Thread.sleep(2000);
-		driver.findElement(By.cssSelector("input#name")).sendKeys("arif");		
+		driver.findElement(By.cssSelector("input#name")).sendKeys("arif");	
+		Thread.sleep(2000);
+		
 		driver.switchTo().defaultContent();
 		
 		driver.quit();

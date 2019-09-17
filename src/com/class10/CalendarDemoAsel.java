@@ -18,17 +18,20 @@ public class CalendarDemoAsel extends CommonMethods{
 		WebElement frame=driver.findElement(By.cssSelector("iframe.demo-frame"));
 		switchToFrame(frame);
 		
-		//click to bring calendar view
+		//1. click on the element that open calendar view
 		driver.findElement(By.id("datepicker")).click();
 		
 		String expectedDate="30";
 		
-		//get all cells
+		//2. get all cells
 		List <WebElement> cells=driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']/tbody/tr/td"));
+		//3. loop to get text of each cell
 		for (WebElement cell: cells) {
 			//get text of each cell
 			String cellText=cell.getText();
+		//4.checking specific date
 			if (cellText.equals(expectedDate)) {
+	    //5.if date is matching, click on it
 				cell.click();
 			}
 		}

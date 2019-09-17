@@ -23,7 +23,6 @@ public class ReadingPropertyFile {
 			FileInputStream fis=new FileInputStream(filePath);
 			
 			//2. create object of Properties class 
-			prop=new Properties();
 			//3. load in data (data that comes through stream)
 			prop.load(fis);
 			

@@ -3,7 +3,7 @@ package com.class05;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ToolsQA {
    /*Open chrome browser
@@ -20,8 +20,8 @@ public class ToolsQA {
     */
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver");	
-		WebDriver driver=new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", "/Users/milenasibalic/Selenium/geckodriver");	
+		WebDriver driver=new FirefoxDriver();
 		
 		//driver.manage().window().fullscreen();
 		driver.get("https://www.toolsqa.com/automation-practice-form/");
@@ -31,14 +31,7 @@ public class ToolsQA {
 		WebElement lastName=driver.findElement(By.cssSelector("input[name='lastname']"));
 		lastName.sendKeys("sibalic");
 		
-		
-		
-		
-		
-		
-		
-		
 		Thread.sleep(2000);
-		//driver.quit();
+		driver.quit();
 	}
 }

@@ -29,13 +29,14 @@ public class CalendarDemo extends CommonMethods{
 		List<WebElement> cells=driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']/tbody/tr/td"));
 		for(WebElement cell:cells) {
 			String cellText=cell.getText();
+			System.out.println(cellText);
 			if(cellText.equals(expectedDate)) {
 				cell.click();
 			}
 		}
 		
 		Thread.sleep(5000);
-		driver.quit();
+	//	driver.quit();
 	}
 
 }

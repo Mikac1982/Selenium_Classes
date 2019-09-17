@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class DropDownDemo {
-   //drop downs wrriten using select tag
+   //drop downs written using select tag
 	public static void main(String[] args) throws InterruptedException {
 		
 		System.setProperty("webdriver.chrome.driver", "/Users/milenasibalic/Selenium/chromedriver");	
@@ -20,7 +20,7 @@ public class DropDownDemo {
 		
 		//1 element
 		WebElement dropDown=driver.findElement(By.id("continents"));
-		dropDown.click();
+	//	dropDown.click();
 		Thread.sleep(2000);
 		
 		Select obj=new Select(dropDown);
@@ -35,7 +35,7 @@ public class DropDownDemo {
 		List<WebElement> allOptions=obj.getOptions(); //returns you a list of elements
 		System.out.println(allOptions.size());  //7
 		
-		
+//		driver.quit();
 		
 	}
 }

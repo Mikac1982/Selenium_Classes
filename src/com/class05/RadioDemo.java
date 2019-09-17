@@ -1,4 +1,4 @@
-package com.class05;
+ package com.class05;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class RadioDemo {
 		
 		Thread.sleep(2000);
 		//1 way of clicking on the element
-		maleRadio.click();
+	//	maleRadio.click();
 		//once we clicked on it, it is selected ->true
 		System.out.println(maleRadio.isSelected());   //true
 		
@@ -45,7 +45,7 @@ public class RadioDemo {
 			System.out.println(value);
 			
 				if (value.equals(valueToSelect)) { //if value match Automation Tester, it click
-							profession.click();
+							profession.submit();
 				}
 				
 				Thread.sleep(2000);

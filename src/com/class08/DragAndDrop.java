@@ -18,7 +18,7 @@ public class DragAndDrop extends CommonMethods{
 		//1st frame-store drag location into web element
 		WebElement drag=driver.findElement(By.cssSelector("div#draggable"));
 		Thread.sleep(1000);
-		//2nd frame- store dr location into web element
+		//2nd frame- store drop location into web element
 		WebElement drop=driver.findElement(By.cssSelector("div#droppable"));
 		
 		Actions actions=new Actions(driver);

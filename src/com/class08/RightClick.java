@@ -13,6 +13,7 @@ public class RightClick extends CommonMethods{
 		setUpDriver("chrome", "https://www.saucedemo.com");	
 		//storing web element
 		WebElement rightClick=driver.findElement(By.cssSelector("input#user-name"));
+		
 		Actions actions=new Actions(driver);
 		//doing right click on the web element and perform
 		actions.contextClick(rightClick).perform();

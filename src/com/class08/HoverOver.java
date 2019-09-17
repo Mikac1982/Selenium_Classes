@@ -11,6 +11,7 @@ public class HoverOver extends CommonMethods{
 
 		setUpDriver("chrome", "https://www.toolsqa.com");	
 		WebElement hoverOver=driver.findElement(By.xpath("//span[text()='DEMO SITES']"));
+		
 		Actions actions=new Actions(driver);	
 		actions.moveToElement(hoverOver).perform();
 		Thread.sleep(2000);
@@ -18,6 +19,6 @@ public class HoverOver extends CommonMethods{
 		driver.findElement(By.xpath("//span[text()='Automation Practice Switch Windows']")).click();
 		
 		Thread.sleep(2000);
-	//	driver.close();
+		driver.close();
 	}
 }

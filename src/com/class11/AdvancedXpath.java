@@ -19,7 +19,7 @@ public class AdvancedXpath extends CommonMethods{
 	
 	// Navigate to “https://opensource-demo.orangehrmlive.com/”
 	// Login to the application by writing xpath based on “following and preceding siblings”
-	sendText(driver.findElement(By.xpath("//span[@class='form-hint']/preceding-sibling::input")), "Admin");
+	sendText(driver.findElement(By.xpath("//input[@name=")), "Admin");
 	sendText(driver.findElement(By.xpath("//span[text()='Password']/preceding-sibling::input")), "admin123");
 		 
 		//mixed
